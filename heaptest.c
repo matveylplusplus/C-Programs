@@ -33,4 +33,17 @@ int main()
 {
     runMe();
     runMe2();
+    char* p =  malloc(20);//should allocate 16 bytes in heap
+    printf("Pre-free\n");
+    for(int i = 0; i < 20; i++)
+    {
+      printf("p[%d] = %c\n", i, p[i]);
+    }
+    free(&p[10]);
+
+    printf("Post-free\n");
+    for(int i = 0; i < 20; i++)
+    {
+      printf("p[%d] = %c\n", i, p[i]);
+    }
 }
