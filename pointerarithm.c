@@ -3,23 +3,22 @@ int main( )
 {
  char c = 'Z';
  char *cp = &c;
- printf("cp is %p\n", cp);
+ printf("cp is 0x%x\n", cp);
  printf("The character at cp is %c\n", *cp);
  /* Pointer arithmetic - see what cp+1 is */
  cp = cp+1;
- printf("cp is %p\n", cp);
+ printf("cp is 0x%x\n\n", cp);
 
  /* Do not print *cp, because it points to
  memory space not allocated to your program */
 
   //PART 2
-  int i = 5;
-  int* intP = &i;
+  int* intP;
   int* intP2 = intP;
-  printf("First int pointer is %p and second is %p\n", intP, intP2);
+  printf("First int pointer is 0x%x and second is 0x%x\n", intP, intP2);
 
   intP2++;
-  printf("After incrementing second int pointer, first pointer is %p and second is %p\n", intP, intP2);
+  printf("After incrementing second int pointer, first pointer is 0x%x and second is 0x%x\n", intP, intP2);
 
   int ans2 = ((char*)intP2-(char*)intP);//I typecast to char here because I know it's 1 byte in size. so we can do pointer arithmetic relative to bytes and not relative to the size of int
   
@@ -29,10 +28,10 @@ int main( )
   double d = 5;
   double* doubleP = &d;
   double* doubleP2 = doubleP;
-  printf("\nFirst double pointer is %p and second is %p\n", doubleP, doubleP2);
+  printf("\nFirst double pointer is 0x%x and second is 0x%x\n", doubleP, doubleP2);
 
   doubleP2++;
-  printf("After incrementing second double pointer, first pointer is %p and second is %p\n", doubleP, doubleP2);
+  printf("After incrementing second double pointer, first pointer is 0x%x and second is 0x%x\n", doubleP, doubleP2);
 
   int ans3 = ((char*)doubleP2-(char*)doubleP);
   
@@ -49,9 +48,9 @@ int main( )
   doubleP2 += 2;
 
   printf("\nAfter adding by 2...\n");
-  printf("cp = %p and cp2 = %p\n", cp, cp2);
-  printf("intP = %p and intP2 = %p\n", intP, intP2);
-  printf("doubleP = %p and doubleP2 = %p\n", doubleP, doubleP2);
+  printf("cp = 0x%x and cp2 = 0x%x\n", cp, cp2);
+  printf("intP = 0x%x and intP2 = 0x%x\n", intP, intP2);
+  printf("doubleP = 0x%x and doubleP2 = 0x%x\n", doubleP, doubleP2);
 
   int ans4 = cp2-cp;
   printf("Byte difference between char pointers is %d and should be 2\n", ans4);
